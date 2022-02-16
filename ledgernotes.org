@@ -1,0 +1,47 @@
+
+
+* 
+
+
+
+* 
+  :PROPERTIES:
+  :ID:       b6ea22fe-d377-462b-b8a9-be696d9ce0ec
+  :END:
+
+#+begin_src emacs-lisp
+(defvar my-org-personal-capture-filename nil
+  "File name for org personal capture template.")
+
+(defvar my-org-work-capture-filename nil
+  "File name for org work capture template.")
+
+(defun my-org-personal-capture ()
+  "Read file name to capture to."
+  (interactive)
+  (setq my-org-personal-capture-filename
+        (read-file-name "Capture to: " "~/Projects/personal"  nil t "inbox.org")))
+
+(defun my-org-work-capture ()
+  "Read file name to capture to."
+  (interactive)
+  (setq my-org-work-capture-filename
+        (read-file-name "Capture to: " "~/Projects/work/"
+                        nil t "inbox.org")))
+
+;  (call-interactively #'org-capture))
+
+
+
+
+#+end_src
+
+
+
+
+
+* 2022-02-16 Wednesday
+** Testing something out 
+   :PROPERTIES:
+   :CAPTURED: <2022-02-16 14:59>
+   :END:
