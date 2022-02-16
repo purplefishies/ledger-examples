@@ -45,3 +45,14 @@
    :PROPERTIES:
    :CAPTURED: <2022-02-16 14:59>
    :END:
+* Testing                                                                       :work:
+  :PROPERTIES:
+  :CAPTURED: <2022-02-16 15:04>
+  :ID:       5d6c3d06-af3e-4dfe-99a1-5d58244279a1
+  :END:
+* A test again                                                                  :work:
+  :PROPERTIES:
+  :CAPTURED: <2022-02-16 15:08>
+  :END:
+
+[[./ledgernotes.org_20220216_151425_FFR7bP.png]]
