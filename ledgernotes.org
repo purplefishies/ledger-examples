@@ -141,3 +141,58 @@ Suppliers:SupplierName:Accounts_Receivable
     BusinessName:Assets:Checking:Bank_Name                   $400.00
     BusinessName:Assets:Accounts:Receivable
    #+end_src
+
+
+* General account equation
+  :LOGBOOK:
+  CLOCK: [2022-02-17 Thu 16:50]--[2022-02-17 Thu 16:50] =>  0:00
+  :END:
+
+** TODO General form
+
+ \[
+ A + L + E + I + X = 0
+ \]
+
+ - A := Assets
+
+ - L := Liabilities
+
+ - E := Equity
+
+ - I := Income
+
+ - X := Expenses
+
+
+
+
+** Obligating Funds
+
+   Funds you have agreed to provide at a future date.
+
+** Expending Funds
+
+    When the funds actually leave your account
+
+    - In reverse you have an "account receivable" until you actually get the money
+
+
+** Gifts
+
+   #+begin_src ledger
+2015/01/01 Gift
+    assets:cash                                               $20.00
+    income:gifts
+2015/01/02 Farmers Market
+    expenses:food                                             $40.00
+    assets:cash
+   #+end_src
+
+** How to start over if you get out of sync
+   #+begin_src ledger
+
+   #+end_src
+
+
+** [[./ledgernotes.org_20220217_171932_lnCoZ6.png]]
