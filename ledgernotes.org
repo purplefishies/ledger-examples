@@ -56,3 +56,88 @@
   :END:
 
 [[./ledgernotes.org_20220216_151425_FFR7bP.png]]
+* a Test                                                                        :work:
+  :PROPERTIES:
+  :CAPTURED: <2022-02-16 15:35>
+  :ID:       b4fd2057-89a6-4079-892e-538acb115084
+  :END:
+
+
+
+
+
+* Example
+
+
+   #+begin_src ledger
+2020/02/01 * Trader Joe's
+  Groceries         $100.00  
+  Visa
+
+   #+end_src
+
+
+
+
+* Payments in businesses
+  :PROPERTIES:
+  :CAPTURED: <2022-02-17 16:40>
+  :END:
+
+
+** Account structure
+
+#+begin_example
+ASSETS
+BusinessName:Assets:Petty_Cash
+BusinessName:Assets:Checking:Bank_Name
+BusinessName:Assets:Account_Receivable:Customer_Name
+BusinessName:Assets:Checking_Deposit
+LIABILITIES
+BusinessName:Liabilities:Accounts_Payable:Supplier_Name:Invoice
+BusinessName:Liabilities:Accounts_Payable:Sales_Tax
+BusinessName:Liabilities:Accounts_Payable:Debt:Bank_Name
+BusinessName:Liabilities:Accounts_Payable:Debt:Friend_Name
+EXPENSES
+BusinessName:Expenses:Freight:Forwarder_Name:For_Customer_Name   
+BusinessName:Expenses:Inspection:Lab_Name:For_Customer_Name
+BusinessName:Expenses:Bank_Charge:Bank_Name
+BusinessName:Expenses:Rent:Office_Address
+CUSTOMER
+Customers:CustomerName:Payment:Remittance
+Customer:CustomerName:Accounts_Payable
+Customer:CustomerName:Invoice
+SUPPLIER
+Suppliers:SupplierName:Payment:Remittance
+Suppliers:SupplierName:Accounts_Receivable
+#+end_example
+
+** A Cash transaction
+   :PROPERTIES:
+   :CAPTURED: <2022-02-17 16:41>
+   :END:
+
+#+begin_src ledger
+2015-01-01 Invoice Payment - Invoice Number #343
+    BusinessName:Assets:Checking:Bank_Name      $200
+    Customers:CustomerName:Payment:Remittance  $-200
+#+end_src
+
+
+** Bill Payment Example
+
+   #+begin_src ledger
+2015-01-01 Bill #115
+    BusinessName:Assets:Account_Receivable:Customer_Name     $400.00
+    Customer:CustomerName:Invoice                           $-400.00
+
+2015-04-01 Bill #115 for CustomerName
+    BusinessName:Assets:Account_Receivable:                 $-400.00        ;(once the customer acknolwedges the bill(has not yet paid because of credit nature) .
+    BusinessName:Assets:Checking_Deposit                     $400.00
+    Customer:CustomerName:Equity                            $-400.00        ;(moving the money from the customers equity fund to the bill payment account - correct ?)
+    Customer:CustomerName:Payment:Bill                       $400.00
+
+2015-05-01 Paid
+    BusinessName:Assets:Checking:Bank_Name                   $400.00
+    BusinessName:Assets:Accounts:Receivable
+   #+end_src
