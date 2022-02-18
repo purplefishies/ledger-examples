@@ -1,0 +1,15 @@
+2015-01-01 Fixed Widget
+    BusinessName:Assets:AccountsReceivable:Labor $100
+    Customers:CustomerName:AccountsPayable     -$100
+
+
+2015-01-02 Payment for Work Performed, Check #1234
+    BusinessName:Transfer:ChecksUncashed        $100
+    BusinessName:Assets:AccountsReceivable:Labor  -$100
+    Customers:CustomerName:Equity            -$100
+    Customers:CustomerName:AccountsPayable   $100
+
+
+2015-01-03 Deposit to Checking
+    BusinessName:Assets:CheckingAccount      $100
+    BusinessName:Transfer:ChecksUncashed     -$100
