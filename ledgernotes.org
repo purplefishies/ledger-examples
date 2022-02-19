@@ -1,10 +1,16 @@
 
 
-* 
+* key Feature of double entry accounting
+
+  - Any transaction will act as a debit and a credit
+
+  - Sum of all Credits will equal the sum of all debits
+
+  - This assists with finding 
 
 
 
-* 
+* Custom rules to select org files that show up in Agenda
   :PROPERTIES:
   :ID:       b6ea22fe-d377-462b-b8a9-be696d9ce0ec
   :END:
@@ -247,3 +253,49 @@ Suppliers:SupplierName:Accounts_Receivable
 
    #+end_src
 
+
+** Examples tracking 
+
+   #+begin_src ledger
+2022/02/18 Order Received
+    OrderReceived:CustomerA                                        1
+    
+   #+end_src
+
+
+   #+begin_src ditaa :file ledgerdita.png
+
+        +-----------+                   +---------------+
+        |  Self     |                   |  Business     |
+        |           |-----------------> |               |
+        |           |                   |               |
+        +-----------+                   +---------------+
+   #+end_src
+
+   #+RESULTS:
+   [[file:ledgerdita.png]]
+
+
+
+** Replacing / identifying previously seen purchases
+   
+   Add in a UUID that is unique to the payer
+   #+begin_src ledger
+2020/01/09 * BANK OF AMERICA CREDIT CARD Bill Payment
+    ; bofacc
+    ; UUID: 2020.01.09-cc-ma:bofa
+    Liabilities:cc-ma:bofa                 $563.85
+    Assets:checking:bofa
+
+2019/01/09 * PAYMENT - THANK YOU
+    ; payment to CC
+    ; UUID: 2020.01.09:cc-ma:bofa
+    Liabilities:cc-ma:bofa                 $-$563.85
+    Assets:checking:bofa
+   #+end_src
+   
+   - These two would counter act each other 
+
+   - Only one would be accepted
+
+   - 
