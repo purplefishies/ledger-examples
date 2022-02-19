@@ -128,12 +128,12 @@ Suppliers:SupplierName:Accounts_Receivable
 
    #+begin_src ledger
 2015-01-01 Bill #115
-    BusinessName:Assets:Account_Receivable:Customer_Name     $400.00
+    BusinessName:Assets:AccountReceivable:Customer_Name     $400.00
     Customer:CustomerName:Invoice                           $-400.00
 
 2015-04-01 Bill #115 for CustomerName
-    BusinessName:Assets:Account_Receivable:                 $-400.00        ;(once the customer acknolwedges the bill(has not yet paid because of credit nature) .
-    BusinessName:Assets:Checking_Deposit                     $400.00
+    BusinessName:Assets:AccountReceivable:                 $-400.00        ;(once the customer acknolwedges the bill(has not yet paid because of credit nature) .
+    BusinessName:Assets:CheckingDeposit                     $400.00
     Customer:CustomerName:Equity                            $-400.00        ;(moving the money from the customers equity fund to the bill payment account - correct ?)
     Customer:CustomerName:Payment:Bill                       $400.00
 
@@ -165,8 +165,6 @@ Suppliers:SupplierName:Accounts_Receivable
  - X := Expenses
 
 
-
-
 ** Obligating Funds
 
    Funds you have agreed to provide at a future date.
@@ -196,3 +194,56 @@ Suppliers:SupplierName:Accounts_Receivable
 
 
 ** [[./ledgernotes.org_20220217_171932_lnCoZ6.png]]
+
+
+   #+begin_src ledger
+2022/02/17 * Customer Invoice
+    BusinessName:Assets:AccountReceivable:CustomerName       $400.00
+    Customer:CustomerName:Invoice:2324234                   $-400.00       ; Generate the invoice for customer
+
+
+2022/02/17 * Invoice Received
+    Customer:CustomerName:Invoice:2324234                   $-400.00       ; Invoice Received
+    
+
+2015-04-01 Bill #115 for CustomerName
+    BusinessName:Assets:CheckingDeposit                     $400.00
+    BusinessName:Assets:AccountReceivable:                 $-400.00        ; Invoice is received by the customer ( Think email notification )
+    Customer:CustomerName:Payment:Bill                       $400.00
+    Customer:CustomerName:Equity                            $-400.00       ; Money moves from customers customers equity fund to the bill payment account
+
+
+   
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+                $400.00  BusinessName:Assets
+                      0    AccountReceivable
+               $-400.00      
+                $400.00      CustomerName
+                $400.00    CheckingDeposit
+               $-400.00  Customer:CustomerName
+               $-400.00    Equity
+               $-400.00    Invoice:2324234
+                $400.00    Payment:Bill
+   --------------------
+                      0
+   #+end_example
+
+
+** Paying a credit card
+   :PROPERTIES:
+   :CAPTURED: <2022-02-18 16:09>
+   :END:
+   #+begin_src ledger
+2020/08/01 Barbecue
+    Expenses:Dining  $50.00
+    Liabilities:Credit_Card
+
+2020/08/02 MyBank
+    Liabilities:Credit_Card   $50.00 ; credit card payment
+    Assets:Checking
+
+   #+end_src
+
