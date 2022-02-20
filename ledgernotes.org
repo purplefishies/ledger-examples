@@ -287,8 +287,6 @@ Suppliers:SupplierName:Accounts_Receivable
 
    - Only one would be accepted
 
-   - 
-
 
 ** Tracking inventory and transactions
 
@@ -312,3 +310,20 @@ Suppliers:SupplierName:Accounts_Receivable
    #+RESULTS:
    [[file:transactions.png]]
 
+
+
+** Payment Remittance
+
+   - Usually a payment to a family member in another country
+
+   - Transfer of money
+
+** A -> B
+
+   Receipts
+   
+** Using ledger with accounts
+   #+begin_src emacs-lisp
+(let ((ledger-accounts-file "/home/user/accounts.ledger"))
+(ledger-accounts-list))
+   #+end_src
