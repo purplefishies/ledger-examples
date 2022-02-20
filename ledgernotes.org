@@ -61,17 +61,6 @@
   :CAPTURED: <2022-02-16 15:08>
   :END:
 
-[[./ledgernotes.org_20220216_151425_FFR7bP.png]]
-* a Test                                                                        :work:
-  :PROPERTIES:
-  :CAPTURED: <2022-02-16 15:35>
-  :ID:       b4fd2057-89a6-4079-892e-538acb115084
-  :END:
-
-
-
-
-
 * Example
 
 
@@ -299,3 +288,27 @@ Suppliers:SupplierName:Accounts_Receivable
    - Only one would be accepted
 
    - 
+
+
+** Tracking inventory and transactions
+
+   #+begin_src ditaa :file transactions.png
+        
+        +-----------------------+
+        |                       |
+        |                       |
+        |                       +--------+
+        |                       |        |          +---------------------------+
+        |                       |        +--------->|                           |
+        +-----------------------+                   |                           |
+                                                    |                           |                                                                                                                   |   
+                                                    |                           |                                                               
+                                                    |                           |                                                               
+                                                    +---------------------------+                                                                       
+                                                                                                                                                
+                                                                                                                                                
+   #+end_src
+
+   #+RESULTS:
+   [[file:transactions.png]]
+
