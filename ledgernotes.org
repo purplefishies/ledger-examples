@@ -327,3 +327,22 @@ Suppliers:SupplierName:Accounts_Receivable
 (let ((ledger-accounts-file "/home/user/accounts.ledger"))
 (ledger-accounts-list))
    #+end_src
+
+
+* Automation relying on Relaxed JSON
+  
+  - [[http://www.relaxedjson.org/][Relaxed JSON]]
+  
+
+
+** Receipts
+
+*** File naming conventions
+
+
+** Emails
+
+*** Naming
+
+
+    TODO deadline:2022/01/01 subject: 
