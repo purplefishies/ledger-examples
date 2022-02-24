@@ -143,7 +143,7 @@ Suppliers:SupplierName:Accounts_Receivable
   CLOCK: [2022-02-17 Thu 16:50]--[2022-02-17 Thu 16:50] =>  0:00
   :END:
 
-** TODO General form
+** General form
 
  \[
  A + L + E + I + X = 0
@@ -159,6 +159,16 @@ Suppliers:SupplierName:Accounts_Receivable
 
  - X := Expenses
 
+
+
+ A best situation would have 
+ 
+ - L >= 0
+
+ - A >= 0 
+   
+   
+ 
 
 ** Obligating Funds
 
